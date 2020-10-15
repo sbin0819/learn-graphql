@@ -1,6 +1,6 @@
 # GraphQL 101
 
-### 1. basic setting
+### 1. init
 
 terminal
 
@@ -39,6 +39,11 @@ server.listen().then(({ url }) => console.log(`server started at ${url}`));
 ```
 
 ### Short Definitaion
+
+#### typeDefs, Resolvers
+
+typeDefs -> type definitions
+resolvers -> resolver functions
 
 #### Query, Mutaion, Subscription
 
