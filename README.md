@@ -99,7 +99,7 @@ mutation{
     }
     user {
       id
-			username
+      username
     }
   }
 }
