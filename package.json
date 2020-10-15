@@ -3,5 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "author": "sbinha0819 <sbinha123@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "apollo-server": "^2.18.2",
+    "graphql": "^15.3.0",
+    "nodemon": "^2.0.5"
+  },
+  "scripts": {
+    "start": "nodemon src/index.js"
+  }
 }
