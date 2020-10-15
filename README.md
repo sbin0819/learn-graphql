@@ -1,12 +1,56 @@
-### GraphQL 101
+# GraphQL 101
 
-#### basic setting
+### 1. basic setting
 
-- terminal
+terminal
 
 ```
 yarn add apollo graphql nodemon
 ```
+
+mkdir src && touch index.js
+
+index.js
+
+```
+const { ApolloServer, gql } = require('apollo-server');
+
+// ApolloServer -> graphQL template
+// gql -> string template
+
+const typeDefs = gql`
+  // typeDefs -> type definitions
+  type Query {
+    hello: String!
+  }
+`;
+
+const resolvers = {
+  // resolvers -> resolver function
+  Query: {
+    hello: () => 'hello world!',
+  },
+};
+
+const server = new ApolloServer({ typeDefs, resolvers });
+
+server.listen().then(({ url }) => console.log(`server started at ${url}`));
+
+```
+
+### Short Definitaion
+
+#### Query, Mutaion, Subscription
+
+CRUD
+
+Query -> R(ead)
+
+Mutation -> C(reate), U(pdate), D(elete)
+
+Subscription -> Maintain real time connnection to server
+
+[GraphQL Queries, Mutations and Subscriptions](https://medium.com/software-insight/graphql-queries-mutations-and-subscriptions-286522b263d9)
 
 ### 참고
 
