@@ -53,7 +53,44 @@ type User {
 }
 ```
 
-3. input
+3. List
+
+```
+ type User {
+    id: ID!
+    username: String!
+  }
+  type Error {
+    field: String!
+    message: String!
+  }
+  type RegisterResponse {
+    errors: [Error]
+    user: User
+  }
+  type Mutation {
+    register: RegisterResponse!
+  }
+```
+
+4. input
+
+**playground**
+
+```
+mutation{
+  register {
+    errors{
+      field
+      message
+    }
+    user {
+      id
+			username
+    }
+  }
+}
+```
 
 ### Short Definitaion
 

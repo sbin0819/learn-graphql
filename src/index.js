@@ -8,8 +8,16 @@ const typeDefs = gql`
     id: ID!
     username: String!
   }
+  type Error {
+    field: String!
+    message: String!
+  }
+  type RegisterResponse {
+    errors: [Error]
+    user: User
+  }
   type Mutation {
-    register: User
+    register: RegisterResponse!
   }
 `;
 
@@ -19,8 +27,20 @@ const resolvers = {
   },
   Mutation: {
     register: () => ({
-      id: 1,
-      username: 'bob',
+      errors: [
+        {
+          field: 'username1',
+          message: 'bad',
+        },
+        {
+          field: 'username2',
+          message: 'bad2',
+        },
+      ],
+      user: {
+        id: 1,
+        username: 'bob',
+      },
     }),
   },
 };
