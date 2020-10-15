@@ -105,12 +105,63 @@ mutation{
 }
 ```
 
+### 2. resolvers
+
+1. args
+
+```
+ login: async (parent, { userInfo: { username } }, context, info) => {
+      return username;
+    },
+```
+
+2. parent
+
+```
+  User: {
+    firstLetterOfUsername: (parent) => {
+      return parent.username[0];
+    },
+    // username: (parent) => {
+    //   // return  'i am username',
+    //   return parent.username[0];
+    // },
+  },
+```
+
+playground
+
+```
+mutation{
+  register(userInfo:{username: "kim", password:"aser"}) {
+    user {
+      id
+      username
+      firstLetterOfUsername
+    }
+  }
+}
+```
+
 ### Short Definitaion
 
 #### typeDefs, Resolvers
 
-typeDefs -> type definitions
-resolvers -> resolver functions
+**typeDefs**
+type definitions
+
+**resolvers**
+resolver functions
+
+- A resolver can optionally accept four positional arguments: (parent, args, context, info)
+  - parent
+    The return value of the resolver for this field's parent (i.e., the previous resolver in the resolver chain).
+  - args
+    An object that contains all GraphQL arguments provided for this field.
+  - context
+    An object shared across all resolvers that are executing for a particular operation. Use this to share per-operation state, including authentication information, dataloader instances, and anything else to track across resolvers.
+  - info
+    not now
 
 #### Query, Mutaion, Subscription
 
