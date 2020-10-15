@@ -4,11 +4,24 @@ const typeDefs = gql`
   type Query {
     hello: String!
   }
+  type User {
+    id: ID!
+    username: String!
+  }
+  type Mutation {
+    register: User
+  }
 `;
 
 const resolvers = {
   Query: {
     hello: () => 'hello world!',
+  },
+  Mutation: {
+    register: () => ({
+      id: 1,
+      username: 'bob',
+    }),
   },
 };
 

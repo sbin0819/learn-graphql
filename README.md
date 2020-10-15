@@ -38,6 +38,23 @@ server.listen().then(({ url }) => console.log(`server started at ${url}`));
 
 ```
 
+### 2. types
+
+1. scalar
+
+ID, String, Int, Float, Boolean
+
+2. custom
+
+```
+type User {
+  id: ID!
+  username: String!
+}
+```
+
+3. input
+
 ### Short Definitaion
 
 #### typeDefs, Resolvers
@@ -57,6 +74,10 @@ Subscription -> Maintain real time connnection to server
 
 [GraphQL Queries, Mutations and Subscriptions](https://medium.com/software-insight/graphql-queries-mutations-and-subscriptions-286522b263d9)
 
-### 참고
+### Recommendation
+
+download GraphQL for VSCode in VSCode extension
+
+### References
 
 [Ben Awad](https://www.youtube.com/watch?v=DyvsMKsEsyE&list=PLN3n1USn4xln0j_NN9k4j5hS1thsGibKi)
