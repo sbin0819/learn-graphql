@@ -75,6 +75,19 @@ type User {
 
 4. input
 
+```
+ input UserInfo {
+    username: String!
+    password: String!
+    age: Int
+  }
+
+type Mutation {
+  register(userInfo: UserInfo!): RegisterResponse!
+  login(userInfo: UserInfo!): Boolean!
+  }
+```
+
 **playground**
 
 ```
