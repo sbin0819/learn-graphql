@@ -181,4 +181,5 @@ download GraphQL for VSCode in VSCode extension
 
 ### References
 
+[GraphQL과 RESTful API](https://www.holaxprogramming.com/2018/01/20/graphql-vs-restful-api/)
 [Ben Awad](https://www.youtube.com/watch?v=DyvsMKsEsyE&list=PLN3n1USn4xln0j_NN9k4j5hS1thsGibKi)
